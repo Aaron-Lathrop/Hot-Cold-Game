@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header.js';
 import Status from './Status.js';
 import Guess from './Guess.js';
+import './Game.css';
 
 export default class Game extends React.Component {
     constructor(props) {
@@ -14,11 +15,9 @@ export default class Game extends React.Component {
     }
 
     handleHeader(element) {
-        console.log(`this.handleHeader called`);
-        console.log(element);
-        if(element === "new") {
+        if (element === "new") {
             this.newGame();
-        } else if(element === 'about') {
+        } else if (element === 'about') {
             this.about();
         }
     }
@@ -67,7 +66,7 @@ export default class Game extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="game">
                 <Header onClick={element => this.handleHeader(element)} />
                 <Status status={this.state.feedback} />
                 <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
