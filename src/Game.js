@@ -7,6 +7,7 @@ export default class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            feedback: '',
             guessList: [],
             secretNumber: Math.floor(Math.random() * 100)
         }
@@ -20,13 +21,16 @@ export default class Game extends React.Component {
         let feedback = "";
         const secretNumber = this.state.secretNumber;
         const difference = Math.abs(secretNumber - value);
-        if(value && value === secretNumber) {
+        console.log(`the secret number is: (${secretNumber})`);
+        console.log(`the guess is: (${value})`);
+        console.log(`the difference is: (${difference})`);
+        if(value && difference === 0) {
                 feedback = "Winner winner chicken dinner!!!";
                 this.addGuess(value);
             } else if(!value || value > 100 || value < 0) {
                 feedback = "Please guess a number between 0 and 100";
                 alert(feedback);
-            } else if(difference< 10){
+            } else if(difference < 10){
                 feedback = "Hot";
                 this.addGuess(value);
             } else if(difference > 9 && difference < 20) {
@@ -39,22 +43,21 @@ export default class Game extends React.Component {
                 feedback = "Cold";
                 this.addGuess(value);
             }
-        return feedback;
+        
+        console.log(feedback);
+        this.setState({feedback});
+        console.log(this.state.feedback);
     }
 
     addGuess(guess) {
-        console.log('addGuess ran');
-        console.log(`${guess}`);
-        console.log(`${this.state.guessList}`);
         this.setState({guessList: [...this.state.guessList, guess]});
-        console.log(`${this.state.guessList}`);
     }
 
     render() {
         return (
             <div>
                 <Header />
-                <Status />
+                <Status status={this.state.feedback} />
                 <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
             </div>
         );
