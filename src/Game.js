@@ -43,6 +43,7 @@ export default class Game extends React.Component {
                 <Header />
                 <Status />
                 <Guess />
+            </div>
         );
     }
 }
