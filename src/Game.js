@@ -38,6 +38,11 @@ export default class Game extends React.Component {
     }
 
     render() {
-        return ('something');
+        return (
+            <div>
+                <Header />
+                <Status />
+                <Guess />
+        );
     }
 }
