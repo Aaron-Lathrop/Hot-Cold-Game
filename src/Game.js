@@ -7,23 +7,32 @@ export default class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            feedback: '',
+            feedback: 'Make your Guess!',
             guessList: [],
             secretNumber: Math.floor(Math.random() * 100)
         }
     }
 
+    handleHeader(element) {
+        console.log(`this.handleHeader called`);
+        console.log(element);
+        if(element === "new") {
+            this.newGame();
+        }
+    }
+
     newGame() {
-        this.setState({secretNumber: Math.floor(Math.random() * 100)});
+        this.setState({
+            feedback: 'Make your Guess!',
+            guessList: [],
+            secretNumber: Math.floor(Math.random() * 100)
+        });
     }
 
     giveFeedback(value) {
         let feedback = "";
         const secretNumber = this.state.secretNumber;
         const difference = Math.abs(secretNumber - value);
-        console.log(`the secret number is: (${secretNumber})`);
-        console.log(`the guess is: (${value})`);
-        console.log(`the difference is: (${difference})`);
         if(value && difference === 0) {
                 feedback = "Winner winner chicken dinner!!!";
                 this.addGuess(value);
@@ -43,10 +52,7 @@ export default class Game extends React.Component {
                 feedback = "Cold";
                 this.addGuess(value);
             }
-        
-        console.log(feedback);
         this.setState({feedback});
-        console.log(this.state.feedback);
     }
 
     addGuess(guess) {
@@ -56,7 +62,7 @@ export default class Game extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header onClick={element => this.handleHeader(element)} />
                 <Status status={this.state.feedback} />
                 <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
             </div>
