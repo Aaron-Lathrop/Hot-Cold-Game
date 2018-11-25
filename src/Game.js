@@ -55,7 +55,7 @@ export default class Game extends React.Component {
             <div>
                 <Header />
                 <Status />
-                <Guess guess={guess => this.giveFeedback(guess)} />
+                <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
             </div>
         );
     }
