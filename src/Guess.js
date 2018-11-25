@@ -5,7 +5,7 @@ import GuessList from './GuessList.js';
 export default function Guess(props) {
     return (
         <div>
-            <GuessForm guess={props.onSubmit} />
+            <GuessForm guess={props.guess} />
             <GuessList guessList={props.guessList} />
         </div>
     );
