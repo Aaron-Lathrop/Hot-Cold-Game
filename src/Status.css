@@ -1,0 +1,8 @@
+.status h2 {
+    text-align: center;
+}
+
+.feedback {
+    background-color: red;
+    padding: 15px 45px 15px 45px;
+}

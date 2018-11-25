@@ -14,7 +14,7 @@ export default class GuessForm extends React.Component {
         return (
             <form name="guessForm" onSubmit={event => this.onSubmit(event)}>
                 <input ref={input => this.input = input} />
-                <button type='submit'>Guess</button>
+                <button type='submit'>GUESS</button>
             </form>
         );
     }

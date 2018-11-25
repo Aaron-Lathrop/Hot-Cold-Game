@@ -1,0 +1,11 @@
+.guess {
+    text-align: center;
+}
+
+.guess input, button {
+    padding: 15px;
+}
+
+.guess button {
+    margin-left: 10px;
+}
