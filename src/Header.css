@@ -1,18 +1,28 @@
-a {
+.header a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 
-ul {
+.header a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.header ul {
     display: inline;
     list-style-type: none;
     padding: 0;
 }
 
-li {
+.header li {
     display: inline-block;
 }
 
-li:last-child {
+.header li:last-child {
     float: right;
+}
+
+.header h1 {
+    text-align: center;
 }
