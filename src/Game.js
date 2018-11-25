@@ -42,7 +42,7 @@ export default class Game extends React.Component {
             <div>
                 <Header />
                 <Status />
-                <Guess />
+                <Guess guess={guess => this.addGuess(guess)} />
             </div>
         );
     }
