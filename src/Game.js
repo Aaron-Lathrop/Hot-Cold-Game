@@ -18,6 +18,8 @@ export default class Game extends React.Component {
         console.log(element);
         if(element === "new") {
             this.newGame();
+        } else if(element === 'about') {
+            this.about();
         }
     }
 
@@ -27,6 +29,10 @@ export default class Game extends React.Component {
             guessList: [],
             secretNumber: Math.floor(Math.random() * 100)
         });
+    }
+
+    about() {
+        alert("This is a guessing game where you guess a number from 0 - 100. You'll be told 'hot' if you are close to the secret number and 'cold' if you are far from the secret number. Click '+ NEW GAME' in the upper-right corner to start a new game. Have fun!");
     }
 
     giveFeedback(value) {
