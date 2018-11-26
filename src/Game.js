@@ -38,11 +38,13 @@ export default class Game extends React.Component {
         let feedback = "";
         const secretNumber = this.state.secretNumber;
         const difference = Math.abs(secretNumber - value);
-        if(value && difference === 0) {
+        if(value && !this.state.guessList.includes(value) && difference === 0) {
                 feedback = "Winner winner chicken dinner!!!";
                 this.addGuess(value);
             } else if(!value || value > 100 || value < 0) {
                 feedback = "Please guess a number between 0 and 100";
+            } else if(this.state.guessList.includes(value)) {
+                feedback = `You already guessed the number ${value}.`;
             } else if(difference < 10){
                 feedback = "Hot";
                 this.addGuess(value);
@@ -68,7 +70,9 @@ export default class Game extends React.Component {
             <div className="game">
                 <Header onClick={element => this.handleHeader(element)} />
                 <Status status={this.state.feedback} />
-                <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
+                <div className="guessContainer">
+                    <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
+                </div>
             </div>
         );
     }
