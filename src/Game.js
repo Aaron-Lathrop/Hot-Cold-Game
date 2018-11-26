@@ -43,7 +43,6 @@ export default class Game extends React.Component {
                 this.addGuess(value);
             } else if(!value || value > 100 || value < 0) {
                 feedback = "Please guess a number between 0 and 100";
-                alert(feedback);
             } else if(difference < 10){
                 feedback = "Hot";
                 this.addGuess(value);

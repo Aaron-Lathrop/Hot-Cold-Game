@@ -4,8 +4,37 @@
 
 .guess input, button {
     padding: 15px;
+    width: 300px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .guess button {
-    margin-left: 10px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #394264;
+    border: none;
+    color: white;
+}
+
+.guess button:hover {
+    cursor: pointer;
+    background-color: lightcoral;
+}
+
+.guessList {
+    background-color: lightblue;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.guessListItem {
+    background-color: #394264;
+    padding: 5px;
+    font-size: 20px;
 }
