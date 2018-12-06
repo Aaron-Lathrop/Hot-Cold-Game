@@ -23,11 +23,11 @@ export default class Game extends React.Component {
     }
 
     newGame() {
-        this.setState({
-            feedback: 'Make your Guess!',
-            guessList: [],
-            secretNumber: Math.floor(Math.random() * 100)
-        });
+            this.setState({
+                feedback: 'Make your Guess!', 
+                guessList: [],
+                secretNumber: Math.floor(Math.random() * 100)
+            });
     }
 
     about() {
