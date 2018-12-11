@@ -3,8 +3,8 @@
 }
 
 .guess input, button {
-    padding: 15px;
-    width: 300px;
+    padding: 15px 0;
+    width: 100%;
     font-size: 25px;
     text-align: center;
 }
@@ -22,19 +22,24 @@
 .guess button:hover {
     cursor: pointer;
     background-color: lightcoral;
+    transform: translateY(-2px) scale(1.01, 1.01);
+    box-shadow: 4px #394264;
 }
 
 .guessList {
     background-color: lightblue;
-    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
-    padding: 10px;
+    padding: 25px;
 }
 
 .guessListItem {
     background-color: #394264;
     padding: 5px;
     font-size: 20px;
+}
+
+.guess h2 {
+    color: #394264;
 }

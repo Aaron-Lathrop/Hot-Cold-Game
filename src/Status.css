@@ -1,8 +1,9 @@
-.status h2 {
-    text-align: center;
+.status {
+    background-color: red;
+    padding: 10px 0;
+    margin-bottom: 15px;
 }
 
-.feedback {
-    background-color: red;
-    padding: 15px;
+.status h2 {
+    text-align: center;
 }

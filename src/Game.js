@@ -69,9 +69,11 @@ export default class Game extends React.Component {
         return (
             <div className="game">
                 <Header onClick={element => this.handleHeader(element)} />
-                <Status status={this.state.feedback} />
-                <div className="guessContainer">
-                    <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
+                <div class="gamebox">
+                    <Status status={this.state.feedback} />
+                    <div className="guessContainer">
+                        <Guess guess={guess => this.giveFeedback(guess)} guessList={this.state.guessList} />
+                    </div>
                 </div>
             </div>
         );
